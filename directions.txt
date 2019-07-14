@@ -1,0 +1,6 @@
+this is the first file that i am pushing onto the AssignmentsDev10 repository
+These are the steps I will follow after I save this:
+1. I will add this file to the assignment folder
+2. I will commit the changes with a "git commit" command. I can do "git commit -m <message>" but instead I will press the I key to type and then "ESC" before typing ":wq" to write the file and quit
+3. I will pull with the "git pull origin master" command to recive changes made to the project since my last pull.
+4. I will push with the "git push origin master" command to send the changes to the remote repository.
