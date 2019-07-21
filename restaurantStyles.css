@@ -1,0 +1,71 @@
+
+	body {
+		background-color:Cornsilk;/*FFF8DC*/
+	}
+
+	header,footer,section{
+		text-align:center;
+	}
+	
+	#articleText {
+		display:block;
+		margin-left:auto;
+		margin-right:auto;
+		width:400px;
+	}
+
+	#room {
+		display:block;
+		margin-left:auto;
+		margin-right:auto;
+		width:400px;
+		height:150px;
+		overflow:hidden;
+		border:2;
+		
+	}
+	
+	#menu {
+		width:100%;
+		text-align:middle;
+	}
+	
+	.item {
+		margin-top:10px;
+		align:center;
+		text-align:center;
+		width:200px;
+	}
+	
+	#beverages {
+		width:34%;
+		text-align:left;
+		
+	}
+	
+	#beverages tr:nth-child(even){
+		background-color:Silver;
+	}
+	
+	#beverages td:nth-child(even) {
+		text-align:center;
+	}
+	
+	.theme {
+		background-color:Maroon;/*800000*/
+		color:White;/*FFFFFF*/
+	}
+	
+	.imageborder {/*not working*/
+		border-width:10px;
+		border-color:Silver;/*C0C0C0*/
+	}
+	
+	tbody {
+		padding-top:10px;
+	}
+
+	
+
+
+
