@@ -1,52 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<title>PC Home</title>
-	<link rel="stylesheet" type="text/css" href="restaurantStyles.css" />
-</head>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=divice-width, initial-scale=1, shrink-to-fit=no">
 
-<body>
-	<main>
-		<header>
-			<h1 class="theme">Posh Chipotle</h1>
-			<hr />
-		</header>
+		<!-- Bootstrap CDN copied from https://getbootstrap.com/docs/4.1/getting-started/introduction/ -->
 		
-		<nav>
-			<p><a>Home</a>&nbsp;&nbsp;&nbsp;
-			<a href="menu.html" target="_self">Menu</a>&nbsp;&nbsp;&nbsp;
-			<a href="contact.html" target="_self">Contact Us</a></p>
-			<hr />
-		</nav>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+			integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
+			crossorigin="anonymous">
+
+		<title>PC Home</title>
 		
-		<section>
+		<link rel="stylesheet" type="text/css" href="restaurantStyles.css" />
+		<link rel="stylesheet" href="node_modules/octicons/build/font/octicons.css">
 		
-			<form>
-				<img id="room" class="imageborder" src="images/restaurant.jpg" alt="broken image"/>
-			</form>
+	</head>
+	<body>
+	
+		<noscript style="background-color:lime;">
+			Javascript has been disabled on your browser. If you would like the best experience from our website, please go to settings/advanced settings/site settings/Javascript to turn it on.
+		</noscript>
+	
+		<div class="container">
+		
+			<header>
+				<h1 class="theme">Posh Chipotle</h1>
+			</header>
 			
-			<article id="articleText">
-				<h4><i>The ultimate in five star dining</i></h4>
-				<p>
-					Enjoy the finest dining that North America has to offer. 
-					Our Meso-American ispired cuisine is freshly supplied by local farmers
-					who have committed to raising only the most respectable organic produce.
-					Here at Posh Chipotle, our customers build their orders from a list of over twenty
-					unique ingredients, and then our chefs prepare the dish specific to their tastes. 
-					So come enjoy what we have to offer.
-				</p>
+			<nav>
+				<a class="btn badge-pill" href="index.html" target="_self"><img src="images/home.svg" /></a>
+				<a class="btn badge-pill" href="menu.html" target="_self">Menu</a>
+				<a class="btn badge-pill" href="contact.html" target="_self">Contact Us</a>
+			</nav>
+			
+			<section style="background-color:Cornsilk;">
+			
+				<div class="jumbotron" style="background-image:url(images/InkedPoshChipotle_LI.jpg); background-position:center; background-size:cover; color:cornsilk; padding-top:10px; text-align:left;">
+					<h1><b>Visit Our New Even Parry Location</b></h1>
+					<p><b>1359 Fakeland Ave. Even Parry, MN, 13132</b></p>
+				</div>
+			
+			
+				<form class="row">
 				
-			</article>
+					<div class="col-lg col-md">
+						<img src="images/restaurant.jpg" alt="restaurant image" />
+					</div>
+					
+				</form>
+				
+				
+				<article class="row">
+					<div class="col-lg col-md">
+					<h4 style="text-transform:capitalize"><i>The ultimate in five star dining</i></h4>
+					<p>
+						Enjoy the finest dining that North America has to offer. 
+						Our Meso-American ispired cuisine is freshly supplied by local farmers
+						who have committed to raising only the most respectable organic produce.
+						Here at Posh Chipotle, our customers build their orders from a list of over twenty
+						unique ingredients, and then our chefs prepare the dish specific to their tastes. 
+						So come enjoy what we have to offer.
+					</p>
+					</div>
+					
+				</article>
+				
+			</section>
 			
-			<hr />
+			<footer class="theme">
+				<hr />
+				<p>8371 Bulspit bolv., Guarden Pills, MN, 13131</p>
+				<p>phone: 123-987-4560</p>
+			</footer>
 			
-		</section>
+		</div>
+		<!--bootstrap section -->
+			<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+				integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
+				crossorigin="anonymous"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" 
+				integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" 
+				crossorigin="anonymous"></script>
+			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" 
+				integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" 
+				crossorigin="anonymous"></script>
 		
-		<footer class="theme">
-			<p>8371 Bulspit bolv., Guarden Pills, MN, 13131</p>
-			<p>phone: 123-987-4560</p>
-		</footer>
-		
-	</main>
-</body>
+	</body>
 </html>

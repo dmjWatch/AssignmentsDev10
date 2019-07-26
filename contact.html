@@ -1,43 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<title>PC Contact Us</title>
-	<link rel="stylesheet" type="text/css" href="restaurantStyles.css" />
-</head>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=divice-width, initial-scale=1, shrink-to-fit=no">
 
-<body>
+		<!-- Bootstrap CDN copied from https://getbootstrap.com/docs/4.1/getting-started/introduction/ -->
+	
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+			integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
+			crossorigin="anonymous">
 
-		<header class="theme">
-			<h1 align="center">Posh Chipotle</h1>
+		<title>PC Contact Us</title>
+	
+		<link rel="stylesheet" type="text/css" href="restaurantStyles.css" />
+		
+		
+		<script type="text/javascript">
+			function varifyInformation(){
+			
+				if(!/^[a-zA-Z\s]+$/.test(document.getElementById("userName").value)){
+					alert("name box must have only uppercase or lowercase letters in it.");
+					return;
+				}
+				var name=document.getElementById("userName").value;
+				var email=document.getElementById("userEmail").value;
+				if(/^\(\d{3}\)\s\d{3}-\d{4}/.test(document.getElementById("userPhone").value)){
+					alert("phone number must be in the proper format");
+					return;
+				}
+				var phone=document.getElementById("userPhone").value;
+				var reason=document.getElementById("userReason").value;
+				var info=document.getElementById("info").value;
+				if(document.getElementById("answerYes").checked){
+					var visited=true;
+				} else if(document.getElementById("answerNo").checked){
+					var visited=false;
+				} else var visited=null;
+				
+				document.getElementById("response").style.visibility="visible";
+				document.getElementById("response").style.display="block";
+				return false;
+			}
+		</script>
+	</head>
+	<body>
+	<div class="container">
+		<noscript style="background-color:lime;">
+			Javascript has been disabled on your browser. If you would like the best experience from our website, please go to settings/advanced settings/site settings/Javascript to turn it on.
+		</noscript>
+
+		<header>
+			<h1 class="theme">Posh Chipotle</h1>
 			<hr />
 		</header>
 		
 		<nav>
-			<p><a href="index.html" target="_self">Home</a>&nbsp&nbsp&nbsp
-			<a href="menu.html" target="_self">Menu</a>&nbsp&nbsp&nbsp
-			<a>Contact Us</a></p>
-			<hr />
+			<a class="btn badge-pill" href="index.html" target="_self"><img src="images/home.svg" /></a>
+			<a class="btn badge-pill" href="menu.html" target="_self">Menu</a>
+			<a class="btn badge-pill" href="contact.html" target="_self">Contact Us</a>
 		</nav>
 		
-	<main align="center">
-		<div style="text-align:center-left;">
-		<form action="contact.html" method="POST" align="middle">
-			Name: <input type="text" name="userName" /><br />
-			Email:<input type="text" name="userEmail" /><br />
-			Phone:<input type="text" name="userPhone" /><br />
-			Reason for Inquiry: <select name="userReason">
-				<option value="catering">Catering</option>
-				<option value="private">Private Party</option>
-				<option value="feedback">Feedback</option>
-				<option value="other">Other</option>
-			</select><br />
-			Additional Information:<input type="textarea" name="info" /><br />
-			Have you been to the restaurant? <input type="radio" name="answer" value="NO" />No
-			<input type="radio" name="answer" value="YES" />Yes<br />
-			<input type="submit" />
+	<main class="row">
+		<div class="col-8" style="text-align:left;">
+		<form action="contact.html" method="POST">
+		
+				*<b>bold</b> is required*<br />
+				
+			<div class="form-group">
+				<label for="userName"><b>Name</b></label>
+				<input type="sr-only" class="form-control" id="userName" required;/>
+			</div>
+			<div class="form-group">
+				<label for="userEmail"><b>Email</b></label>
+				<input type="email" class="form-control" id="userEmail" aria-describedby="ed" required;/>
+				<small id="ed" class="form-text text-muted">Our primary method for getting in touch with you. We'll never share your email.</small>
+			</div>
+			<div class="form-group">
+				<label for="userPhone"><b>Phone</b></label>
+				<input type="phone" class="form-control bfh-phone" data-format="(ddd)ddd-dddd" id="userPhone" aria-descibedby="pd" placeholder="(###) ###-####" required;/>
+				<small id="pd" class="form-text text-muted">we will contact you to confirm only if there is no email response.</small>
+			</div>
+			<div class="form-group">
+				<label for="userReason"><b>Reason for Inquiry</b></label>
+				<select id="userReason" class="form-control">
+					<option value="catering" required;>Catering</option>
+					<option value="private" required;>Private Party</option>
+					<option value="feedback" required;>Feedback</option>
+					<option value="other" required;>Other</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="info">Additional Information</label>
+				<textarea class="form-control" id="info" rows="4"></textarea>
+			</div>
+			<div>Have you visited Posh Chipotle before?</div>
+			<div class="form-group" >
+				<input class="form-check-input" type="radio" name="answer" id="answerNo" value="NO">
+				<label for="answerNo">NO</label>
+			</div>
+			<div class="form-group">
+				<input class="form-check-input" type="radio" name="answer" id="answerYes" value="YES">
+				<label for="answerYes">YES</label>
+			</div>
+			<button type="button" onclick="varifyInformation()" class="btn btn-primary">Submit</button>
 		</form>
 		</div>
 		
+		<div class="col-lg col-md">
+			<p>response should show here</p>
+			<p id="response" style="display:none; visibility:hidden; background-color:green;color:white;">
+			your information has successfully been varified and received. we will be in contact soon.
+			</p>
+		</div>
+		
 	</main>
+		<footer class="theme">
+			<hr />
+			<p>8371 Bulspit bolv., Guarden Pills, MN, 13131</p>
+			<p>phone: 123-987-4560</p>
+		</footer>
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" 
+		integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" 
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" 
+		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" 
+		crossorigin="anonymous"></script>
+	
 </body>
 </html>
