@@ -18,13 +18,16 @@
 		<script type="text/javascript">
 			function varifyInformation(){
 			
+				document.getElementById("response").style.visibility="hidden";
+				document.getElementById("response").style.display="none";
+			
 				if(!/^[a-zA-Z\s]+$/.test(document.getElementById("userName").value)){
 					alert("name box must have only uppercase or lowercase letters in it.");
 					return;
 				}
 				var name=document.getElementById("userName").value;
 				var email=document.getElementById("userEmail").value;
-				if(/^\(\d{3}\)\s\d{3}-\d{4}/.test(document.getElementById("userPhone").value)){
+				if(!/^\(\d{3}\)\s\d{3}-\d{4}/.test(document.getElementById("userPhone").value)){
 					alert("phone number must be in the proper format");
 					return;
 				}
@@ -77,7 +80,7 @@
 			</div>
 			<div class="form-group">
 				<label for="userPhone"><b>Phone</b></label>
-				<input type="phone" class="form-control bfh-phone" data-format="(ddd)ddd-dddd" id="userPhone" aria-descibedby="pd" placeholder="(###) ###-####" required;/>
+				<input type="phone" class="form-control bfh-phone" data-format="(ddd) ddd-dddd" id="userPhone" aria-descibedby="pd" placeholder="(###)_###-####" required;/>
 				<small id="pd" class="form-text text-muted">we will contact you to confirm only if there is no email response.</small>
 			</div>
 			<div class="form-group">
